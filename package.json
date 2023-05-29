@@ -40,15 +40,10 @@
     "test": "tsdx test --passWithNoTests --no-cache",
     "lint": "tsdx lint . --ignore-pattern dist && prettier --check .",
     "format": "tsdx lint . --ignore-pattern dist --fix && prettier --write .",
-    "prepare": "tsdx build"
+    "prepare": "husky install && tsdx build"
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint ."
-    }
   },
   "prettier": {
     "printWidth": 80,
