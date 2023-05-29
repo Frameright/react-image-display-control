@@ -1,5 +1,4 @@
 /coverage/
-/dist/
 /generated-docs/
 /npm-debug.log
 
@@ -7,6 +6,7 @@
 .idea/
 .tmp/
 .vscode/
+dist/
 node_modules/
 package-lock.json
 *.md
