@@ -1,0 +1,12 @@
+/coverage/
+/dist/
+/generated-docs/
+/npm-debug.log
+
+.DS_Store
+.idea/
+.tmp/
+.vscode/
+node_modules/
+package-lock.json
+*.md
