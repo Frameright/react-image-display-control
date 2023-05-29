@@ -13,14 +13,15 @@ import type { Parser } from '@frameright/image-display-control-metadata-parser/d
 const isServerOrStatic = typeof window === 'undefined';
 
 const isBrowser = !isServerOrStatic;
+const isRunningTests = typeof jest !== 'undefined';
 
 // See
 // https://github.com/Frameright/image-display-control-web-component/blob/main/image-display-control/docs/explanation/importing.md
-if (isBrowser) {
+if (isBrowser && !isRunningTests) {
   // Defines the <img is="image-display-control"> web component.
-  /* FIXME fails on Jest import(
-    "@frameright/image-display-control-web-component/dist/src/image-display-control.js"
-  );*/
+  import(
+    '@frameright/image-display-control-web-component/dist/src/image-display-control.js'
+  );
 }
 
 type ParserConstructor = {
