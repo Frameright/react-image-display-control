@@ -1,6 +1,30 @@
 {
+  "name": "@frameright/react-image-display-control",
+  "description": "Image Display Control React component",
+  "keywords": [
+    "metadata",
+    "image",
+    "image-manipulation",
+    "responsive-design",
+    "responsive-layout",
+    "responsive-images",
+    "metadata-extraction",
+    "metadata-parser",
+    "iptc-metadata",
+    "image-display-control",
+    "frameright",
+    "image-publishing",
+    "react",
+    "react-component",
+    "reactjs"
+  ],
   "version": "0.1.0",
   "license": "MIT",
+  "author": {
+    "name": "Frameright (Coberg Ltd)",
+    "email": "hello@frameright.io",
+    "url": "https://frameright.io/"
+  },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -31,8 +55,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-image-display-control",
-  "author": "Aurelien Lourot",
   "module": "dist/react-image-display-control.esm.js",
   "devDependencies": {
     "@types/react": "^18.2.7",
