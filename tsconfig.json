@@ -2,6 +2,9 @@
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "include": ["src", "types"],
   "compilerOptions": {
+    // Needed for iterating on maps with for...of
+    "target": "es2015",
+
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "importHelpers": true,
@@ -15,6 +18,11 @@
     "strict": true,
     // linter checks for common issues
     "noImplicitReturns": true,
+
+    // Needed for importing image-display-control-metadata-parser-standalone in
+    // src/index.tsx
+    "noImplicitAny": false,
+
     "noFallthroughCasesInSwitch": true,
     // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
     "noUnusedLocals": true,
