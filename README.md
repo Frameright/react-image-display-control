@@ -42,8 +42,6 @@ Jest tests are set up to run with `npm test` or `yarn test`.
 
 ### Bundle analysis
 
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
-
 #### Setup Files
 
 This is the folder structure we set up for you:
@@ -80,10 +78,9 @@ TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rol
 
 ### GitHub Actions
 
-Two actions are added by default:
+One action is added by default:
 
 - `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
 
 ## Optimizations
 
