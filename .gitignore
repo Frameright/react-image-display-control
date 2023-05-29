@@ -1,6 +1,6 @@
 *.log
 .DS_Store
-.vscode
+# LA_TODO .vscode
 node_modules
 .*cache
 dist
