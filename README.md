@@ -1,3 +1,21 @@
+[<img src="https://avatars.githubusercontent.com/u/35964478?s=200&v=4" align="right" width="64" height="64">](https://frameright.io)
+[![npm version](https://img.shields.io/npm/v/@frameright/react-image-display-control)](https://www.npmjs.com/package/@frameright/react-image-display-control)
+[![github actions](https://github.com/AurelienLourot/react-image-display-control/actions/workflows/main.yml/badge.svg)](https://github.com/AurelienLourot/react-image-display-control/actions/workflows/main.yml)
+
+&nbsp;
+
+<!-- Note: make sure all URLs in this document are absolute, and not relative
+     within GitHub, as we are publishing this file to NPM and want URLs to
+     remain valid there. -->
+
+# Image Display Control React Component
+
+An easy way to retrieve [Image Display Control](https://frameright.io) metadata
+out of images. Made with :heart: by [Frameright](https://frameright.io). Power
+to the pictures!
+
+---
+
 # TSDX React User Guide
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
