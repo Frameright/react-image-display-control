@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test": "tsdx test --passWithNoTests --no-cache",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
@@ -42,6 +42,6 @@
     "react-dom": "^18.2.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.5.2",
-    "typescript": "^3.9.10"
+    "typescript": "^5.0.4"
   }
 }
