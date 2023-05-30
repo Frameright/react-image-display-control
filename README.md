@@ -39,7 +39,7 @@ to the pictures!
 
 This [React](https://react.dev) component extends any `<img>`-like
 element/component with the ability to retrieve
-[Image Display Control](https://frameright.io) metadata from the image file in
+[Image Display Control](https://frameright.io) metadata from its image file in
 order to automatically and responsively zoom in on the most interesting part of
 the image.
 
@@ -68,7 +68,7 @@ middle-crop.
 ### Basic usage
 
 This React component extends its `<img>`-like children with the ability to
-retrieve image regions from the image metadata, and to zoom in on the best one
+retrieve image regions from their image metadata, and to zoom in on the best one
 for the current element size:
 
 <img src="https://raw.githubusercontent.com/Frameright/react-image-display-control/main/docs/assets/skater_withidc.png" align="right">
