@@ -1,6 +1,6 @@
 [<img src="https://avatars.githubusercontent.com/u/35964478?s=200&v=4" align="right" width="64" height="64">](https://frameright.io)
 [![npm version](https://img.shields.io/npm/v/@frameright/react-image-display-control)](https://www.npmjs.com/package/@frameright/react-image-display-control)
-[![github actions](https://github.com/AurelienLourot/react-image-display-control/actions/workflows/main.yml/badge.svg)](https://github.com/AurelienLourot/react-image-display-control/actions/workflows/main.yml)
+[![github actions](https://github.com/Frameright/react-image-display-control/actions/workflows/main.yml/badge.svg)](https://github.com/Frameright/react-image-display-control/actions/workflows/main.yml)
 
 &nbsp;
 
@@ -50,7 +50,7 @@ offer nowadays is to use the
 [`object-fit: cover;`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
 CSS property in order to scale and middle-crop it:
 
-<img src="https://raw.githubusercontent.com/AurelienLourot/react-image-display-control/main/docs/assets/skater_middlecrop.png" align="right">
+<img src="https://raw.githubusercontent.com/Frameright/react-image-display-control/main/docs/assets/skater_middlecrop.png" align="right">
 
 ```html
 <img
@@ -71,7 +71,7 @@ This React component extends its `<img>`-like children with the ability to
 retrieve image regions from the image metadata, and to zoom in on the best one
 for the current element size:
 
-<img src="https://raw.githubusercontent.com/AurelienLourot/react-image-display-control/main/docs/assets/skater_withidc.png" align="right">
+<img src="https://raw.githubusercontent.com/Frameright/react-image-display-control/main/docs/assets/skater_withidc.png" align="right">
 
 ```html
 <ImageDisplayControl>
@@ -146,7 +146,7 @@ Other `<img>`-like elements/components are supported as well, e.g.
 [React-Bootstrap `<Image>`s](https://react-bootstrap.github.io/components/images/).
 
 &emsp; :airplane:
-[Advanced usage](https://github.com/AurelienLourot/react-image-display-control/blob/main/docs/usage.md)
+[Advanced usage](https://github.com/Frameright/react-image-display-control/blob/main/docs/usage.md)
 
 ## Local demo
 
@@ -159,7 +159,7 @@ npm build
 npm start
 ```
 
-&emsp; :wrench: [Contributing](https://github.com/AurelienLourot/react-create-display-control/blob/main/docs/contributing.md)
+&emsp; :wrench: [Contributing](https://github.com/Frameright/react-create-display-control/blob/main/docs/contributing.md)
 
 ## Dependency tree / credits
 
