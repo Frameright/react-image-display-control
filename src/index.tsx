@@ -91,7 +91,7 @@ interface ImageSource {
   pathOnServer?: string;
 }
 
-export default function ImageDisplayControl({
+export function ImageDisplayControl({
   children,
   'data-debug': debug = false,
 }: {
