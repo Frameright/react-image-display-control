@@ -239,6 +239,9 @@ More support can be achieved with a few tweaks:
 
 ## Changelog
 
+**0.0.1** (2023-05-31):
+  * Initial version.
+
 ---
 
 # TSDX React User Guide
