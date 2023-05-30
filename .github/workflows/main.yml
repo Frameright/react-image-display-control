@@ -7,15 +7,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['10.x', '12.x', '14.x']
+        node: ['10', '12', '14', '16', '18']
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -28,5 +28,39 @@ jobs:
       - name: Test
         run: npm run test --ci --coverage --maxWorkers=2
 
-      - name: Build
-        run: npm build
+  pack:
+    name: Pack and upload
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install deps and build (with cache)
+        run: npm install
+
+      - name: Pack
+        run: npm pack
+
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: image-display-control-metadata-parser
+          path: frameright-react-image-display-control-*.tgz
+          if-no-files-found: error
+
+  spellchecker:
+    name: Spellchecker
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install deps
+        run: npm install
+
+      - name: Spellchecker
+        run: npm run spellcheck
