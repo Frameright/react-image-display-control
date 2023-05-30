@@ -14,6 +14,117 @@ An easy way to retrieve [Image Display Control](https://frameright.io) metadata
 out of images. Made with :heart: by [Frameright](https://frameright.io). Power
 to the pictures!
 
+## Table of Contents
+
+<!-- toc -->
+
+  * [Overview](#overview)
+    + [Without this component](#without-this-component)
+    + [Basic usage](#basic-usage)
+  * [Image Display Control metadata](#image-display-control-metadata)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Local demo](#local-demo)
+  * [Dependency tree / credits](#dependency-tree--credits)
+  * [Support](#support)
+    + [Supported `img`-like elements and components](#supported-img-like-elements-and-components)
+    + [Supported environments](#supported-environments)
+    + [Supported browsers](#supported-browsers)
+  * [Changelog](#changelog)
+- [TSDX React User Guide](#tsdx-react-user-guide)
+  * [Commands](#commands)
+  * [Configuration](#configuration)
+    + [Jest](#jest)
+    + [Bundle analysis](#bundle-analysis)
+      - [Setup Files](#setup-files)
+      - [React Testing Library](#react-testing-library)
+    + [Rollup](#rollup)
+    + [TypeScript](#typescript)
+  * [Continuous Integration](#continuous-integration)
+    + [GitHub Actions](#github-actions)
+  * [Optimizations](#optimizations)
+  * [Module Formats](#module-formats)
+  * [Deploying the Example Playground](#deploying-the-example-playground)
+  * [Named Exports](#named-exports)
+  * [Including Styles](#including-styles)
+  * [Publishing to NPM](#publishing-to-npm)
+  * [Usage with Lerna](#usage-with-lerna)
+
+<!-- tocstop -->
+
+## Overview
+
+This [React](https://react.dev) component extends any `<img>`-like
+element/component with the ability to retrieve
+[Image Display Control](https://frameright.io) metadata from the image file in
+order to automatically and responsively zoom in on the most interesting part of
+the image.
+
+### Without this component
+
+When an image is too big for its `<img>` HTML element, the best option browsers
+offer nowadays is to use the
+[`object-fit: cover;`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+CSS property in order to scale and middle-crop it:
+
+<img src="https://raw.githubusercontent.com/AurelienLourot/react-image-display-control-web-component/main/docs/assets/skater_middlecrop.png" align="right">
+
+```html
+<img
+  src="https://webc.frameright.io/assets/pics/skater.jpg"
+  width="200"
+  height="200"
+  style="object-fit: cover;"
+/>
+```
+
+This is less than optimal, as there might be, in the example above, a better
+square-ish region in the image that could be displayed instead of the
+middle-crop.
+
+### Basic usage
+
+This React component extends its `<img>`-like children with the ability to
+retrieve image regions from the image metadata, and to zoom in on the best one
+for the current element size:
+
+<img src="https://raw.githubusercontent.com/AurelienLourot/react-image-display-control-web-component/main/docs/assets/skater_withidc.png" align="right">
+
+```html
+<ImageDisplayControl>
+  <img
+    src="https://webc.frameright.io/assets/pics/skater.jpg"
+    width="200"
+    height="200"
+  />
+</ImageDisplayControl>
+```
+
+The resulting HTML element is
+[responsive](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+and will automatically reassess the best region to zoom in on when it gets
+resized, e.g. when the user turns their phone from portrait to landscape.
+
+## Image Display Control metadata
+
+## Installation
+
+## Usage
+
+## Local demo
+
+## Dependency tree / credits
+
+## Support
+
+### Supported `img`-like elements and components
+
+### Supported environments
+
+### Supported browsers
+
+## Changelog
+
 ---
 
 # TSDX React User Guide
