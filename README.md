@@ -28,6 +28,7 @@ to the pictures!
   * [Dependency tree / credits](#dependency-tree--credits)
   * [Support](#support)
     + [Supported `img`-like elements and components](#supported-img-like-elements-and-components)
+    + [Supported image formats](#supported-image-formats)
     + [Supported environments](#supported-environments)
     + [Supported browsers](#supported-browsers)
   * [Changelog](#changelog)
@@ -107,9 +108,60 @@ resized, e.g. when the user turns their phone from portrait to landscape.
 
 ## Image Display Control metadata
 
+Nowadays an image file (e.g. JPEG, PNG) can contain this type of image regions
+in their metadata according to
+[the IPTC standard](https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region).
+This React component uses
+[a  library](https://github.com/Frameright/image-display-control-metadata-parser)
+to let the back-end or front-end extract the regions from the image file. It
+then passes them to the `<img>` tag and turns it into
+[a web component](https://github.com/Frameright/image-display-control-web-component),
+which automatically and responsively zooms in on the best region.
+
+Photographers, or anyone else, can use the
+[Frameright app](https://frameright.app/) to define and store image regions in
+the metadata of their pictures.
+
 ## Installation
 
+In your [Node.js](https://nodejs.org/en)-based project (e.g. using
+[Next.js](https://nextjs.org/) or [Vite](https://vitejs.dev/)) run:
+
+```bash
+npm install @frameright/react-image-display-control
+```
+
 ## Usage
+
+```tsx
+// src/MyComponent.tsx
+
+import { ImageDisplayControl } from "@frameright/react-image-display-control";
+
+export default function MyComponent() {
+  return (
+    <ImageDisplayControl>
+      <img
+        src="https://webc.frameright.io/assets/pics/skater.jpg"
+        width="200"
+        height="200"
+      />
+    </ImageDisplayControl>
+  );
+}
+```
+
+This doesn't change the structure of the resulting DOM, i.e.:
+* the `<img>` tag remains an `<img>` tag, and
+* no new parent elements are added around it, so
+* the CSS rules that used to target the `<img>` tag directly will still apply.
+
+Other `<img>`-like elements/components are supported as well, e.g.
+[Next.js `<Image>`s](https://nextjs.org/docs/api-reference/next/image) or
+[React-Bootstrap `<Image>`s](https://react-bootstrap.github.io/components/images/).
+
+&emsp; :airplane:
+[Advanced usage](https://github.com/AurelienLourot/react-image-display-control/blob/main/docs/usage.md)
 
 ## Local demo
 
@@ -118,6 +170,8 @@ resized, e.g. when the user turns their phone from portrait to landscape.
 ## Support
 
 ### Supported `img`-like elements and components
+
+### Supported image formats
 
 ### Supported environments
 
