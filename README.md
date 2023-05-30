@@ -154,7 +154,10 @@ export default function MyComponent() {
 This doesn't change the structure of the resulting DOM, i.e.:
 * the `<img>` tag remains an `<img>` tag, and
 * no new parent elements are added around it, so
-* the CSS rules that used to target the `<img>` tag directly will still apply.
+* the CSS rules that used to target the `<img>` tag directly will still apply,
+  and
+* the `<img>` tag will still naturally take the same space and position in the
+  layout.
 
 Other `<img>`-like elements/components are supported as well, e.g.
 [Next.js `<Image>`s](https://nextjs.org/docs/api-reference/next/image) or
