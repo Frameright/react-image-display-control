@@ -168,6 +168,17 @@ Other `<img>`-like elements/components are supported as well, e.g.
 
 ## Local demo
 
+To run a local development server that serves the basic demo located in
+[`example/`](exanple/), run:
+
+```bash
+cd example/
+npm build
+npm start
+```
+
+&emsp; :wrench: [Contributing](https://github.com/AurelienLourot/react-create-display-control/blob/main/docs/contributing.md)
+
 ## Dependency tree / credits
 
 ## Support
