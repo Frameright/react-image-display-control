@@ -51,7 +51,8 @@ if (isBrowser) {
   // Note: this has no .d.ts file, so we have to use `"noImplicitAny": false`
   // in tsconfig.json for this import to work. Ideally we should get rid of
   // this special standalone file, as it ships Node polyfills for the browser.
-  // Instead, the library should not require Node polyfills.
+  // Instead, the library should not require Node polyfills. See
+  // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
   import(
     '@frameright/image-display-control-metadata-parser/dist/image-display-control-metadata-parser-standalone.min.js'
   ).then(() => {
@@ -67,7 +68,8 @@ if (isBrowser) {
   if (require) {
     // FIXME: for this to work on Next.js, we need to set
     // `config.resolve.fallback = { fs: false };` in next.config.js. See
-    // https://stackoverflow.com/questions/64926174/module-not-found-cant-resolve-fs-in-next-js-application
+    // * https://github.com/Frameright/image-display-control-metadata-parser/issues/3
+    // * https://stackoverflow.com/questions/64926174/module-not-found-cant-resolve-fs-in-next-js-application
     fs = require('fs');
 
     // eslint-disable-next-line @typescript-eslint/no-var-requires
