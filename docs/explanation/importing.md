@@ -25,7 +25,7 @@ or at build time for building static pages, you can import the React component
 anywhere with:
 
 ```js
-import "@frameright/image-display-control-web-component/image-display-control.js";
+import "@frameright/react-image-display-control";
 ```
 
 &emsp; :airplane:
