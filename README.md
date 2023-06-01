@@ -158,8 +158,7 @@ To run a local development server that serves the basic demo located in
 
 ```bash
 cd example/
-npm build
-npm start
+./clean-build-and-run.sh
 ```
 
 &emsp; :wrench: [Contributing](https://github.com/Frameright/react-create-display-control/blob/main/docs/contributing.md)

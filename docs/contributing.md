@@ -7,6 +7,7 @@
 - [:floppy_disk: Code formatting](#floppy_disk-code-formatting)
 - [:memo: Validating](#memo-validating)
   * [Running the unit tests](#running-the-unit-tests)
+  * [Running the local demo](#running-the-local-demo)
 - [:bookmark_tabs: Documenting](#bookmark_tabs-documenting)
   * [(Re-)generating tables of contents](#re-generating-tables-of-contents)
   * [Spellchecking the documentation](#spellchecking-the-documentation)
@@ -41,6 +42,16 @@ Pull and run [Jest](https://jestjs.io/) with:
 ```bash
 npm install
 npm run test
+```
+
+### Running the local demo
+
+Build the React component, pull [Parcel](https://parceljs.org/) and run
+[`../example/`](../example/) with:
+
+```bash
+cd example/
+./clean-build-and-run.sh  # interactive watch mode
 ```
 
 ## :bookmark_tabs: Documenting
