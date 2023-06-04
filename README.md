@@ -10,8 +10,8 @@
 
 # Image Display Control React Component
 
-An easy way to retrieve [Image Display Control](https://frameright.io) metadata
-out of images. Made with :heart: by [Frameright](https://frameright.io). Power
+An easy way to do [Image Display Control](https://frameright.io) in your React
+web app. Made with :heart: by [Frameright](https://frameright.io). Power
 to the pictures!
 
 ## Table of Contents
