@@ -42,9 +42,9 @@ Attributes and properties can be set at three different levels:
 
 ### Standard attributes and properties
 
-Keep using the attributes and properties corresponding to the child, whether it
-is a stock `<img>` element or, for example, a Next.js `<Image>` component. With
-a few caveats.
+Keep using the attributes and properties of the child as you would otherwise,
+whether it is a stock `<img>` element or, for example, a Next.js `<Image>`
+component. With a few caveats:
 
 #### `src=` attribute
 
