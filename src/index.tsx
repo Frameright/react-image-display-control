@@ -90,6 +90,11 @@ if (isBrowser) {
 
 interface ImageSource {
   src: string; // URL
+
+  // Optional. If provided, this is the path to the image on server, for
+  // server-side rendering or static site generation. If not provided although
+  // server-side rendering or static site generation is used, a warning will be
+  // issued. Pass `none` to disable this warning.
   pathOnServer?: string;
 }
 
@@ -227,14 +232,13 @@ function _initializeImageRegionsMap(
       let imageRegions = '';
       if (isServerOrStatic) {
         if (!imageSource.pathOnServer) {
-          // TODO: link to documentation and invent an attribute to disable this
-          // warning.
           _warn(
             'Missing data-path-on-server attribute for',
             imageSource.src,
-            ", can't read image regions from disk."
+            ", can't read image regions from disk. You probably want to read " +
+              'https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md'
           );
-        } else {
+        } else if (imageSource.pathOnServer !== 'none') {
           _traceIfDebug(
             debug,
             'Reading image regions on disk for',

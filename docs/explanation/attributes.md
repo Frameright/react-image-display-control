@@ -1,5 +1,7 @@
 # HTML attributes and React properties
 
+## Table of Contents
+
 <!-- toc -->
 
 - [`img`-like children's attributes and properties](#img-like-childrens-attributes-and-properties)
