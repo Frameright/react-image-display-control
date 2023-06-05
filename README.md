@@ -183,8 +183,8 @@ cd example/
 
 Any [Node.js](https://nodejs.org/en)-based, [React](https://react.dev/)-based
 bundled environment, with or without
-[server-side rendering](https://nextjs.org/docs/pages/building-your-application/rendering/server-side-rendering),
-should be supported. We have validated:
+[server-side rendering](docs/explanation/ssr.md), should be supported. We have
+validated:
 
 * [Vite](https://vitejs.dev/) 4.3.2,
 * [vite-plugin-ssr](https://vite-plugin-ssr.com/) 0.4.124,

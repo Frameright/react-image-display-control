@@ -98,7 +98,8 @@ The `<ImageDisplayControl>` component adds
   [reference](https://github.com/Frameright/image-display-control-web-component/blob/main/image-display-control/docs/reference/attributes.md)
   for more details.
 * Additional `data-*=` attributes/properties exist:
-    * on the children (e.g. `data-path-on-server=` for server-side rendering),
+    * on the children (e.g. `data-path-on-server=` for
+      [server-side rendering](explanation/ssr.md)),
     * on the `<ImageDisplayControl>` component (e.g. `data-debug` for debugging),
     * on its DOM parent (e.g. `data-idc-parent` for guiding developers).
 

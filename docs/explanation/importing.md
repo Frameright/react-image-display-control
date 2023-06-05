@@ -20,9 +20,8 @@ npm install @frameright/react-image-display-control
 ```
 
 No matter whether your code is intended to run in the browser, during
-[server-side rendering](https://nextjs.org/docs/pages/building-your-application/rendering/server-side-rendering)
-or at build time for building static pages, you can import the React component
-anywhere with:
+[server-side rendering](ssr.md) or at build time for building static pages, you
+can import the React component anywhere with:
 
 ```js
 import "@frameright/react-image-display-control";

@@ -363,11 +363,10 @@ function _checkParentElement(
   if (child) {
     const parent = child.parentElement;
     if (parent && !parent.dataset.idcParent) {
-      // TODO: link to documentation and invent an attribute to disable this
-      // warning.
       _warn(
         "Parent element of <ImageDisplayControl> doesn't have a " +
-          "'data-idc-parent' attribute. You probably want to read TODO"
+          "'data-idc-parent' attribute. You probably want to read " +
+          'https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/attributes.md#parent-dom-elements-attributes'
       );
     }
   }
