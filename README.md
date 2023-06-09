@@ -45,6 +45,8 @@ the image.
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
+&emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
+
 > **NOTE**: if you are not using React, you may want to have a look at the
 > [Image Display Control Web component](https://github.com/Frameright/image-display-control-web-component)
 > instead.
