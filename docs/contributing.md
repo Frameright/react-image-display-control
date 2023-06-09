@@ -16,7 +16,7 @@
 - [:gift: Releasing](#gift-releasing)
   * [Version number](#version-number)
   * [Changelog](#changelog)
-  * [Update `package-lock.json`](#update-package-lockjson)
+  * [Update the `package-lock.json` files](#update-the-package-lockjson-files)
   * [Last tweaks and checks](#last-tweaks-and-checks)
   * [Git tag](#git-tag)
   * [Build the package locally](#build-the-package-locally)
@@ -94,11 +94,11 @@ Describe the changes made compared to the last released version in the
 [changelog](README.md). Browse the git history to make sure nothing has been
 left out.
 
-### Update `package-lock.json`
+### Update the `package-lock.json` files
 
 ```bash
-rm -rf node_modules/ package-lock.json
-npm install
+cd example/
+./clean-build-and-run.sh
 ```
 
 ### Last tweaks and checks
