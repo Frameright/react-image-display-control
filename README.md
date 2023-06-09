@@ -199,8 +199,8 @@ cd example/
 
 Any [Node.js](https://nodejs.org/en)-based, [React](https://react.dev/)-based
 bundled environment, with or without
-[server-side rendering](docs/explanation/ssr.md), should be supported. We have
-validated:
+[server-side rendering](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md),
+should be supported. We have validated:
 
 * [Vite](https://vitejs.dev/) 4.3.2,
 * [vite-plugin-ssr](https://vite-plugin-ssr.com/) 0.4.124,
@@ -239,10 +239,14 @@ More support can be achieved with a few tweaks:
 
 ## Changelog
 
+**1.0.1** (2023-06-09):
+  * Fixed link on NPM.
+
 **1.0.0** (2023-06-09):
   * Implemented the `data-path-on-server="none"` attribute to disable warnings
-    when the image is not found while performing server-side rendering or static
-    site generation.
+    when the image is not found while performing
+    [server-side rendering](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md)
+    or static site generation.
 
 **0.0.1** (2023-05-31):
   * Initial version.
