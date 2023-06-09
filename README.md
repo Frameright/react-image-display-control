@@ -96,6 +96,8 @@ resized, e.g. when the user turns their phone from portrait to landscape.
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
+&emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
+
 ## Image Display Control metadata
 
 Nowadays an image file (e.g. JPEG, PNG) can contain this type of image regions
@@ -170,6 +172,8 @@ cd example/
 ```
 
 &emsp; :wrench: [Contributing](https://github.com/Frameright/react-create-display-control/blob/main/docs/contributing.md)
+
+&emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 

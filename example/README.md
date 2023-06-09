@@ -7,3 +7,5 @@ Run me with:
 ```
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+
+&emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
