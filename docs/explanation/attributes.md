@@ -1,5 +1,7 @@
 # HTML attributes and React properties
 
+&emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
+
 ## Table of Contents
 
 <!-- toc -->
