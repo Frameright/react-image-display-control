@@ -43,6 +43,12 @@ element/component with the ability to retrieve
 order to automatically and responsively zoom in on the most interesting part of
 the image.
 
+&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+
+> **NOTE**: if you are not using React, you may want to have a look at the
+> [Image Display Control Web component](https://github.com/Frameright/image-display-control-web-component)
+> instead.
+
 ### Without this component
 
 When an image is too big for its `<img>` HTML element, the best option browsers
@@ -87,6 +93,8 @@ The resulting HTML element is
 [responsive](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 and will automatically reassess the best region to zoom in on when it gets
 resized, e.g. when the user turns their phone from portrait to landscape.
+
+&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
 ## Image Display Control metadata
 
@@ -162,6 +170,8 @@ cd example/
 ```
 
 &emsp; :wrench: [Contributing](https://github.com/Frameright/react-create-display-control/blob/main/docs/contributing.md)
+
+&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
 ## Dependency tree / credits
 
