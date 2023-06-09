@@ -60,7 +60,7 @@ CSS property in order to scale and middle-crop it:
 
 ```html
 <img
-  src="https://webc.frameright.io/assets/pics/skater.jpg"
+  src="https://react.frameright.io/assets/pics/skater.jpg"
   width="200"
   height="200"
   style="object-fit: cover;"
@@ -82,7 +82,7 @@ for the current element size:
 ```html
 <ImageDisplayControl>
   <img
-    src="https://webc.frameright.io/assets/pics/skater.jpg"
+    src="https://react.frameright.io/assets/pics/skater.jpg"
     width="200"
     height="200"
   />
@@ -135,7 +135,7 @@ export default function MyComponent() {
   return (
     <ImageDisplayControl>
       <img
-        src="https://webc.frameright.io/assets/pics/skater.jpg"
+        src="https://react.frameright.io/assets/pics/skater.jpg"
         width="200"
         height="200"
       />

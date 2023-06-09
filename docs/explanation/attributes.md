@@ -30,7 +30,7 @@ Attributes and properties can be set at three different levels:
 >                                   {/* on the parent DOM element */}
   <ImageDisplayControl data-debug>  {/* on the <ImageDisplayControl> component */}
     <img                            {/* on the <img>-like direct children */}
-      src="https://webc.frameright.io/assets/pics/skater.jpg"
+      src="https://react.frameright.io/assets/pics/skater.jpg"
       alt="Skater"
       data-avoid-no-region="off"
     />
@@ -136,7 +136,7 @@ This would look like:
 ```jsx
 <ImageDisplayControl data-debug>
   <img
-    src="https://webc.frameright.io/assets/pics/skater.jpg"
+    src="https://react.frameright.io/assets/pics/skater.jpg"
     alt="Skater"
   />
 </ImageDisplayControl>
@@ -169,7 +169,7 @@ This would look like:
 <div data-idc-parent style={{ contain: 'paint' }}>
   <ImageDisplayControl>
     <img
-      src="https://webc.frameright.io/assets/pics/skater.jpg"
+      src="https://react.frameright.io/assets/pics/skater.jpg"
       alt="Skater"
     />
   </ImageDisplayControl>

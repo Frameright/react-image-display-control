@@ -21,7 +21,7 @@ const App = () => {
             >
               <ImageDisplayControl>
                 <img
-                  src="https://webc.frameright.io/assets/pics/skater.jpg"
+                  src="https://react.frameright.io/assets/pics/skater.jpg"
                   alt="Skater"
                   style={{
                     width: '50%',
