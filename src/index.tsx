@@ -335,6 +335,7 @@ async function _populateImageRegionsMap(
           continue;
         }
 
+        _waitForImports(debug);
         const regions = _readImageRegionsJsonFromArrayBuffer(arrayBuffer);
         if (regions) {
           _traceIfDebug(
@@ -437,9 +438,12 @@ function _readImageRegionsJsonFromArrayBuffer(
   try {
     const extendedWindow = window as unknown as ExtendedWindow;
     if (!extendedWindow.Buffer) {
-      // This can happen in case the browser import to
-      // image-display-control-metadata-parser hasn't finished yet. If this
-      // happens we just return an empty string and this will be retried later.
+      // See
+      // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
+      _warn(
+        "Buffer module not available, can't read image regions from",
+        'ArrayBuffer.'
+      );
     } else {
       const buffer = extendedWindow.Buffer.Buffer.from(arrayBuffer);
       result = _readImageRegionsJsonFromBuffer(buffer);
@@ -452,6 +456,12 @@ function _readImageRegionsJsonFromArrayBuffer(
 
 function _readImageRegionsJsonFromBuffer(buffer: Buffer): string {
   if (!parserConstructor) {
+    // See
+    // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
+    _warn(
+      "parserConstructor module not available, can't read image regions from",
+      'Buffer.'
+    );
     return '';
   }
 
@@ -520,6 +530,24 @@ function _isImgElement(
     return !!element.attributes['src'].value;
   }
   return false;
+}
+
+// Workaround for
+// https://github.com/Frameright/image-display-control-metadata-parser/issues/3
+async function _waitForImports(debug: boolean) {
+  const extendedWindow = window as unknown as ExtendedWindow;
+  for (let attempt = 0; attempt < 5; ++attempt) {
+    if (
+      (fs || isBrowser) &&
+      (extendedWindow.Buffer || isServerOrStatic) &&
+      parserConstructor
+    ) {
+      return; // all imports are available
+    }
+    _traceIfDebug(debug, 'Waiting for imports to resolve...');
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
+  _warn('Some imports are still missing, image regions will not be available.');
 }
 
 const consolePrefix = '[idc]';

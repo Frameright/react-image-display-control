@@ -19,7 +19,7 @@ const App = () => {
               }}
               data-idc-parent
             >
-              <ImageDisplayControl>
+              <ImageDisplayControl data-debug>
                 <img
                   src="https://react.frameright.io/assets/pics/skater.jpg"
                   alt="Skater"
