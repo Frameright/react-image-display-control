@@ -239,7 +239,7 @@ More support can be achieved with a few tweaks:
 
 ## Changelog
 
-**1.0.2** (2023-06-11):
+**1.0.2** and **1.0.3** (2023-06-11):
   * Fixed `import()`-related race condition leading to image regions not being
     found.
 

@@ -335,7 +335,7 @@ async function _populateImageRegionsMap(
           continue;
         }
 
-        _waitForImports(debug);
+        await _waitForImports(debug);
         const regions = _readImageRegionsJsonFromArrayBuffer(arrayBuffer);
         if (regions) {
           _traceIfDebug(
@@ -536,16 +536,17 @@ function _isImgElement(
 // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
 async function _waitForImports(debug: boolean) {
   const extendedWindow = window as unknown as ExtendedWindow;
-  for (let attempt = 0; attempt < 5; ++attempt) {
+  for (const waitMs of [100, 200, 500, 1000, 1000]) {
     if (
       (fs || isBrowser) &&
       (extendedWindow.Buffer || isServerOrStatic) &&
       parserConstructor
     ) {
-      return; // all imports are available
+      _traceIfDebug(debug, 'All imports have resolved.');
+      return;
     }
     _traceIfDebug(debug, 'Waiting for imports to resolve...');
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, waitMs));
   }
   _warn('Some imports are still missing, image regions will not be available.');
 }
