@@ -20,6 +20,7 @@
   ],
   "version": "1.0.3",
   "license": "MIT",
+  "repository": "https://github.com/Frameright/react-image-display-control",
   "author": {
     "name": "Frameright (Coberg Ltd)",
     "email": "hello@frameright.io",
