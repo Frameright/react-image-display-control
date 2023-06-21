@@ -58,6 +58,8 @@ cd example/
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
+&emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
+
 ## :bookmark_tabs: Documenting
 
 ### (Re-)generating tables of contents

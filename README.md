@@ -16,6 +16,8 @@ to the pictures!
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
+&emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
+
 ## Table of Contents
 
 <!-- toc -->
@@ -99,6 +101,8 @@ and will automatically reassess the best region to zoom in on when it gets
 resized, e.g. when the user turns their phone from portrait to landscape.
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+
+&emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 
