@@ -150,7 +150,7 @@ By default the
 [Image Display Control web component](https://github.com/Frameright/image-display-control-web-component)
 will add `contain: paint;` to the `style=` attribute of its parent DOM element.
 This is called
-[CSS containment](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment)
+[CSS containment](https://github.com/Frameright/image-display-control-web-component/blob/main/image-display-control/docs/explanation/css-containment.md)
 and is used to avoid unwanted scrollbars.
 
 Because of this, React may notice that the DOM has been tweaked and complain
