@@ -47,6 +47,18 @@ element/component with the ability to retrieve
 order to automatically and responsively zoom in on the most interesting part of
 the image.
 
+It integrates nicely with other advanced features you may be using in your
+existing project, e.g.:
+* [image candidates (srcset)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset),
+  whether you define them yourself or whether they are generated on your behalf
+  by another component like
+  [Next.js `<Image>`](https://nextjs.org/docs/api-reference/next/image),
+* [server-side rendering](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md)
+  and static site generation, e.g. in a Next.js or in a Vite-based project.
+
+It doesn't change the structure of your DOM: your existing CSS rules still
+apply.
+
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
