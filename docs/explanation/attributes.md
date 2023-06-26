@@ -54,7 +54,7 @@ The `src=` attribute is supported and mandatory. The `<ImageDisplayControl>`
 component will read it:
 
 * in order to determine if the child is an `img`-like child,
-* in order to fetch and parse the image's metadata containing the Image Regions.
+* in order to parse the image's metadata containing the Image Regions.
 
 > **NOTE**: if the `src=` attribute points to another domain as the one hosting
 > the page, make sure that the server hosting the image allows
@@ -96,12 +96,11 @@ for more details.
 ##### `data-image-regions=` attribute
 
 This attribute is used for passing a list of Image Regions to the web component.
-You don't have set it: the `<ImageDisplayControl>` component will fetch and
-parse the Image Regions from the image pointed to by the `src=` attribute, and
-set the `data-image-regions=` attribute for you.
+You don't have set it: the `<ImageDisplayControl>` component will do it for you
+by parsing the Image Regions from the image pointed to by the `src=` attribute.
 
 You may however set it yourself, if you want, in order to override the Image
-Regions that would otherwise be fetched.
+Regions that would otherwise be parsed from the image metadata.
 
 #### Additional properties
 

@@ -25,9 +25,10 @@ This is the case with [Next.js](https://nextjs.org/) or
 
 ## In any environment
 
-In the browser, the component will fetch the Image Regions from the image
-pointed to by the `src=` attribute. On server or at build time however, the
-component can't do the same because:
+In the browser, the component will parse the Image Regions from the image
+pointed to by the `src=` attribute by using
+[`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch). On server
+or at build time however, the component can't do the same because:
 
 * The URL may not be accessible from the server or build machine.
 * The component is expected to render synchronously (i.e. without asynchronous
