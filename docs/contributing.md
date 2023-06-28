@@ -12,7 +12,6 @@
   * [Running the local demo](#running-the-local-demo)
 - [:bookmark_tabs: Documenting](#bookmark_tabs-documenting)
   * [(Re-)generating tables of contents](#re-generating-tables-of-contents)
-  * [Spellchecking the documentation](#spellchecking-the-documentation)
 - [:gift: Releasing](#gift-releasing)
   * [Version number](#version-number)
   * [Changelog](#changelog)
@@ -72,16 +71,6 @@ npm install
 npm run gentoc
 ```
 
-### Spellchecking the documentation
-
-Pull and run [`mdspell`](https://github.com/lukeapage/node-markdown-spellcheck)
-with:
-
-```bash
-npm install
-npm run spellcheck
-```
-
 ## :gift: Releasing
 
 ### Version number
@@ -110,7 +99,6 @@ Format and validate the source one last time:
 ```bash
 npm run format
 npm run gentoc
-npm run spellcheck
 npm run lint
 npm run test
 ```

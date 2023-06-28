@@ -49,18 +49,3 @@ jobs:
           name: image-display-control-metadata-parser
           path: frameright-react-image-display-control-*.tgz
           if-no-files-found: error
-
-  spellchecker:
-    name: Spellchecker
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Install deps
-        run: npm install
-
-      - name: Spellchecker
-        run: npm run spellcheck
