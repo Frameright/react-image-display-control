@@ -15,8 +15,7 @@ const isServerOrStatic = typeof window === 'undefined';
 const isBrowser = !isServerOrStatic;
 const isRunningTests = typeof jest !== 'undefined';
 
-// See
-// https://github.com/Frameright/image-display-control-web-component/blob/main/image-display-control/docs/explanation/importing.md
+// See https://docs.frameright.io/web-component/importing
 if (isBrowser && !isRunningTests) {
   // Defines the <img is="image-display-control"> web component.
   import(
@@ -236,7 +235,7 @@ function _initializeImageRegionsMap(
             'Missing data-path-on-server attribute for',
             imageSource.src,
             ", can't read image regions from disk. You probably want to read " +
-              'https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md'
+              'https://docs.frameright.io/react/ssr'
           );
         } else if (imageSource.pathOnServer !== 'none') {
           _traceIfDebug(
@@ -371,7 +370,7 @@ function _checkParentElement(
       _warn(
         "Parent element of <ImageDisplayControl> doesn't have a " +
           "'data-idc-parent' attribute. You probably want to read " +
-          'https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/attributes.md#parent-dom-elements-attributes'
+          'https://docs.frameright.io/react/attributes#parent-dom-elements-attributes'
       );
     }
   }

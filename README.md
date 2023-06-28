@@ -52,7 +52,7 @@ existing project, e.g.:
   whether you define them yourself or whether they are generated on your behalf
   by another component like
   [Next.js `<Image>`](https://nextjs.org/docs/api-reference/next/image),
-* [server-side rendering](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md)
+* [server-side rendering](https://docs.frameright.io/react/ssr)
   and static site generation, e.g. in a Next.js or in a Vite-based project.
 
 It doesn't change the structure of your DOM: your existing CSS rules still
@@ -143,7 +143,7 @@ npm install @frameright/react-image-display-control
 ```
 
 &emsp; :floppy_disk:
-[Importing in your project](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/importing.md)
+[Importing in your project](https://docs.frameright.io/react/importing)
 
 ## Usage
 
@@ -178,20 +178,20 @@ Other `<img>`-like elements/components are supported as well, e.g.
 [React-Bootstrap `<Image>`s](https://react-bootstrap.github.io/components/images/).
 
 &emsp; :airplane:
-[Advanced usage](https://github.com/Frameright/react-image-display-control/blob/main/docs/usage.md)
+[Advanced usage](https://docs.frameright.io/react/usage)
 
 &emsp; 🌍
-[Supported environments](https://github.com/Frameright/react-image-display-control/blob/main/docs/environments.md)
+[Supported environments](https://docs.frameright.io/react/environments)
 
-&emsp; :wrench: [Contributing](https://github.com/Frameright/react-create-display-control/blob/main/docs/contributing.md)
+&emsp; :wrench: [Contributing](https://docs.frameright.io/react/contributing)
 
-&emsp; 📝 [Changelog](https://github.com/Frameright/react-create-display-control/blob/main/docs/changelog.md)
+&emsp; 📝 [Changelog](https://docs.frameright.io/react/changelog)
 
-&emsp; :sparkles: [Local demo](https://github.com/Frameright/react-image-display-control/blob/main/example/)
+&emsp; :sparkles: [Local demo](https://docs.frameright.io/react/example)
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
 &emsp; 🙏
-[Dependency tree / credits](https://github.com/Frameright/react-image-display-control/blob/main/docs/credits.md)
+[Dependency tree / credits](https://docs.frameright.io/react/credits)
