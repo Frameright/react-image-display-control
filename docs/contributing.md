@@ -82,7 +82,7 @@ Choose the next version number according to the rules of
 ### Changelog
 
 Describe the changes made compared to the last released version in the
-[changelog](README.md). Browse the git history to make sure nothing has been
+[changelog](changelog.md). Browse the git history to make sure nothing has been
 left out.
 
 ### Update the `package-lock.json` files

@@ -28,14 +28,6 @@ to the pictures!
 - [Image Display Control metadata](#image-display-control-metadata)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Local demo](#local-demo)
-- [Dependency tree / credits](#dependency-tree--credits)
-- [Support](#support)
-  * [Supported environments](#supported-environments)
-  * [Supported `img`-like elements and components](#supported-img-like-elements-and-components)
-  * [Supported image formats](#supported-image-formats)
-  * [Supported browsers](#supported-browsers)
-- [Changelog](#changelog)
 
 <!-- tocstop -->
 
@@ -181,94 +173,18 @@ Other `<img>`-like elements/components are supported as well, e.g.
 &emsp; :airplane:
 [Advanced usage](https://github.com/Frameright/react-image-display-control/blob/main/docs/usage.md)
 
-## Local demo
-
-To run a local development server that serves the basic demo located in
-[`example/`](exanple/), run:
-
-```bash
-cd example/
-./clean-build-and-run.sh
-```
+&emsp; 🌍
+[Supported environments](https://github.com/Frameright/react-image-display-control/blob/main/docs/environments.md)
 
 &emsp; :wrench: [Contributing](https://github.com/Frameright/react-create-display-control/blob/main/docs/contributing.md)
+
+&emsp; 📝 [Changelog](https://github.com/Frameright/react-create-display-control/blob/main/docs/changelog.md)
+
+&emsp; :sparkles: [Local demo](https://github.com/Frameright/react-image-display-control/blob/main/example/)
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 
 &emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
 
-## Dependency tree / credits
-
-- [Frameright Image Display Control web component](https://github.com/Frameright/image-display-control-web-component/)
-    - [ungap/custom-elements](https://github.com/ungap/custom-elements), a polyfill
-      for web components on Safari. Many thanks to
-      [WebReflection](https://github.com/WebReflection)!
-- [Frameright Image Display Control metadata parser](https://github.com/Frameright/image-display-control-metadata-parser/)
-    - [mattiasw/ExifReader](https://github.com/mattiasw/ExifReader). Many thanks
-      to [mattiasw](https://github.com/mattiasw)!
-    - [image-size](https://github.com/image-size/image-size). Many thanks to
-      [netroy](https://github.com/netroy)!
-- [uuid](https://github.com/uuidjs/uuid)
-- [React](https://react.dev/) >= 16
-
-## Support
-
-### Supported environments
-
-Any [Node.js](https://nodejs.org/en)-based, [React](https://react.dev/)-based
-bundled environment, with or without
-[server-side rendering](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md),
-should be supported. We have validated:
-
-* [Vite](https://vitejs.dev/) 4.3.2,
-* [vite-plugin-ssr](https://vite-plugin-ssr.com/) 0.4.124,
-* [Next.js](https://nextjs.org/) 13.4.1.
-
-### Supported `img`-like elements and components
-
-Any direct child of `<ImageDisplayControl>` that behaves like an `<img>` element
-and has an `src=` attribute should be supported. We have validated:
-
-* `<img>` elements,
-* [Next.js `<Image>`](https://nextjs.org/docs/api-reference/next/image)
-  components,
-* [React-Bootstrap `<Image>`](https://react-bootstrap.github.io/components/images/)
-  components.
-
-### Supported image formats
-
-Image formats that are both commonly supported by browsers and supported by the
-[Frameright Image Display Control metadata parser](https://github.com/Frameright/image-display-control-metadata-parser)
-should be supported. We have validated JPEG, PNG and WebP.
-
-### Supported browsers
-
-The browsers supported by the
-[Frameright Image Display Control web component](https://github.com/Frameright/image-display-control-web-component/)
-are supported:
-
-* Chrome 64+ (2018)
-* Firefox 69+ (2019)
-* Safari 15.4+ (2022)
-
-More support can be achieved with a few tweaks:
-
-&emsp; :mag: [Browser support](https://github.com/Frameright/image-display-control-web-component/blob/main/image-display-control/docs/explanation/browsers.md)
-
-## Changelog
-
-**1.0.2** and **1.0.3** (2023-06-11):
-  * Fixed `import()`-related race condition leading to image regions not being
-    found.
-
-**1.0.1** (2023-06-09):
-  * Fixed link on NPM.
-
-**1.0.0** (2023-06-09):
-  * Implemented the `data-path-on-server="none"` attribute to disable warnings
-    when the image is not found while performing
-    [server-side rendering](https://github.com/Frameright/react-image-display-control/blob/main/docs/explanation/ssr.md)
-    or static site generation.
-
-**0.0.1** (2023-05-31):
-  * Initial version.
+&emsp; 🙏
+[Dependency tree / credits](https://github.com/Frameright/react-image-display-control/blob/main/docs/credits.md)
