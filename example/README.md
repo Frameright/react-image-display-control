@@ -1,5 +1,12 @@
 # Local demo
 
+<!--
+WARNING: Bits of information here are duplicated in several places:
+  * https://docs.frameright.io/react/example
+  * https://github.com/Frameright/react-image-display-control/blob/main/example/README.md
+Make sure to keep them in sync.
+-->
+
 Run me with:
 
 ```bash
