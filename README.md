@@ -17,6 +17,8 @@ WARNINGS:
 
 # Image Display Control React Component
 
+> **➡️ See this document rendered at [docs.frameright.io/react](https://docs.frameright.io/react)**
+
 An easy way to do [Image Display Control](https://frameright.io) in your React
 web app. Made with :heart: by [Frameright](https://frameright.io). Power
 to the pictures!
