@@ -13,7 +13,7 @@ Run me with:
 ./clean-build-and-run.sh
 ```
 
-&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+&emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 

@@ -23,7 +23,7 @@ An easy way to do [Image Display Control](https://frameright.io) in your React
 web app. Made with :heart: by [Frameright](https://frameright.io). Power
 to the pictures!
 
-&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+&emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
 
@@ -59,7 +59,7 @@ existing project, e.g.:
 It doesn't change the structure of your DOM: your existing CSS rules still
 apply.
 
-&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+&emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 
@@ -111,7 +111,7 @@ The resulting HTML element is responsive and will automatically reassess the
 best region to zoom in on when it gets resized, e.g. when the user turns their
 phone from portrait to landscape.
 
-&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+&emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
 
@@ -191,7 +191,7 @@ Other `<img>`-like elements/components are supported as well, e.g.
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
 
-&emsp; :sparkles: [Live mobile demo](https://react.frameright.io)
+&emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; 🙏
 [Dependency tree / credits](https://docs.frameright.io/react/credits)
