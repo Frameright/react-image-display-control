@@ -7,7 +7,22 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily' # weekdays
+
+    # Do not get one pull request per version bump. Instead get one pull request
+    # bumping several dependency versions at once:
+    groups:
+      deps:
+        patterns:
+          - '*'
+
   - package-ecosystem: 'npm'
     directory: '/example'
     schedule:
       interval: 'daily' # weekdays
+
+    # Do not get one pull request per version bump. Instead get one pull request
+    # bumping several dependency versions at once:
+    groups:
+      deps:
+        patterns:
+          - '*'
