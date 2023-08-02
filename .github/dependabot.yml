@@ -11,7 +11,7 @@ updates:
     # Do not get one pull request per version bump. Instead get one pull request
     # bumping several dependency versions at once:
     groups:
-      deps:
+      all-deps:
         patterns:
           - '*'
 
@@ -23,6 +23,6 @@ updates:
     # Do not get one pull request per version bump. Instead get one pull request
     # bumping several dependency versions at once:
     groups:
-      deps:
+      all-deps:
         patterns:
           - '*'
