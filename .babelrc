@@ -1,0 +1,10 @@
+{
+  "presets": [
+    // See https://stackoverflow.com/questions/63005011/support-for-the-experimental-syntax-jsx-isnt-currently-enabled
+    "@babel/preset-env",
+    "@babel/preset-react",
+
+    // See https://jestjs.io/docs/getting-started#using-typescript
+    "@babel/preset-typescript"
+  ]
+}
