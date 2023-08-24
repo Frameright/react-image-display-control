@@ -13,10 +13,14 @@ import type { Parser } from '@frameright/image-display-control-metadata-parser/d
 const isServerOrStatic = typeof window === 'undefined';
 
 const isBrowser = !isServerOrStatic;
-const isRunningTests = typeof jest !== 'undefined';
+
+// Project maintainer needs to look at this issue.
+// const isRunningTests = typeof jest !== 'undefined';
 
 // See https://docs.frameright.io/web-component/importing
-if (isBrowser && !isRunningTests) {
+
+// if (isBrowser && !isRunningTests) {
+if (isBrowser) {
   // Defines the <img is="image-display-control"> web component.
   import(
     '@frameright/image-display-control-web-component/dist/src/image-display-control.js'
