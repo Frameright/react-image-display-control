@@ -4,7 +4,7 @@ on:
   - pull_request
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Build, lint, and test component on Node ${{ matrix.node }} and ${{ matrix.os }}
 
     runs-on: ${{ matrix.os }}
     strategy:
@@ -21,17 +21,17 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install deps and build (with cache)
+      - name: Install deps and build component (with cache)
         run: npm install
 
       - name: Lint
         run: npm run lint
 
-      - name: Test
+      - name: Test component
         run: npm run test --ci --coverage --maxWorkers=2
 
   pack:
-    name: Pack and upload
+    name: Pack and upload component
 
     runs-on: ubuntu-latest
 
@@ -39,15 +39,41 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install deps and build (with cache)
+      - name: Install deps and build component (with cache)
         run: npm install
 
-      - name: Pack
+      - name: Pack component
         run: npm pack
 
-      - name: Upload
+      - name: Upload component
         uses: actions/upload-artifact@v3
         with:
           name: image-display-control-metadata-parser
           path: frameright-react-image-display-control-*.tgz
           if-no-files-found: error
+
+  example:
+    name: Build the example
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install deps and build component (with cache)
+        run: npm install
+
+      - name: Pack component
+        run: npm pack
+
+      - name: Pass component to example
+        run: cp frameright-react-image-display-control-*.tgz example/frameright-react-image-display-control.tgz
+
+      - name: Install example's dependencies
+        run: npm install
+        working-directory: example/
+
+      - name: Build example
+        run: npm run build
+        working-directory: example/
