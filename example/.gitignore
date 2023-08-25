@@ -1,0 +1,4 @@
+# The react component that we have spontaneously built in the parent directory
+# may not have a checksum that matches the one in the package-lock.json file
+# that would be checked in this repository, so it's best not to check it in. 
+/package-lock.json
