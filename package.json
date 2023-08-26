@@ -26,8 +26,9 @@
     "email": "hello@frameright.io",
     "url": "https://frameright.io/"
   },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "source": "src/index.tsx",
+  "main": "dist/main.js",
+  "types": "dist/types.d.ts",
   "files": [
     "dist",
     "src"
@@ -36,12 +37,12 @@
     "node": ">=16"
   },
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc --build",
+    "start": "parcel watch",
+    "build": "parcel build",
     "test": "jest",
     "lint": "eslint . --ignore-pattern dist && prettier --check .",
     "format": "eslint . --ignore-pattern dist --fix && prettier --write .",
-    "prepare": "husky install && tsc --build",
+    "prepare": "husky install && parcel build",
     "gentoc": "./bin/gentoc.sh"
   },
   "peerDependencies": {
@@ -55,6 +56,8 @@
   },
   "module": "dist/react-image-display-control.esm.js",
   "devDependencies": {
+    "@parcel/packager-ts": "^2.9.3",
+    "@parcel/transformer-typescript-types": "^2.9.3",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "@types/uuid": "^9.0.1",
@@ -70,9 +73,9 @@
   "dependencies": {
     "@frameright/image-display-control-metadata-parser": "^1.1.0",
     "@frameright/image-display-control-web-component": "^1.1.7",
+    "parcel": "^2.9.3",
     "uuid": "^9.0.0"
   },
-  "_FIXME": "jest overrides are a workaround for https://github.com/jaredpalmer/tsdx/issues/1077 and in general most overrides are caused by tsdx not being maintained anymore. See https://github.com/Frameright/react-image-display-control/issues/23",
   "overrides": {
     "eslint": "^8.46.0",
     "eslint-config-react-app": "^7.0.1",
