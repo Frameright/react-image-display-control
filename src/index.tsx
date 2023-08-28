@@ -14,13 +14,11 @@ const isServerOrStatic = typeof window === 'undefined';
 
 const isBrowser = !isServerOrStatic;
 
-// Project maintainer needs to look at this issue.
-// const isRunningTests = typeof jest !== 'undefined';
+// See https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
+const isRunningTests = process.env.JEST_WORKER_ID !== undefined;
 
 // See https://docs.frameright.io/web-component/importing
-
-// if (isBrowser && !isRunningTests) {
-if (isBrowser) {
+if (isBrowser && !isRunningTests) {
   // Defines the <img is="image-display-control"> web component.
   import(
     '@frameright/image-display-control-web-component/dist/src/image-display-control.js'
