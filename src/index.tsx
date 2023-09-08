@@ -13,7 +13,9 @@ import type { Parser } from '@frameright/image-display-control-metadata-parser/d
 const isServerOrStatic = typeof window === 'undefined';
 
 const isBrowser = !isServerOrStatic;
-const isRunningTests = typeof jest !== 'undefined';
+
+// See https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
+const isRunningTests = process.env.JEST_WORKER_ID !== undefined;
 
 // See https://docs.frameright.io/web-component/importing
 if (isBrowser && !isRunningTests) {
