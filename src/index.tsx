@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import React from 'react';
+import * as React from 'react';
 
 // Note: this import is successful only if "moduleResolution" is set to "Node"
 // in tsconfig.json. However if this is set to "bundler" instead and this can't

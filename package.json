@@ -38,7 +38,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "jest",
+    "test": "tsc && jest",
     "lint": "eslint . --ignore-pattern dist && prettier --check .",
     "format": "eslint . --ignore-pattern dist --fix && prettier --write .",
     "prepare": "husky install && tsdx build",
