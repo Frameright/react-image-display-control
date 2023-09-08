@@ -61,6 +61,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Build example
+      - name: Build component and example
         run: ./clean-build-and-run.sh --build-only
         working-directory: example/
