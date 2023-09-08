@@ -37,7 +37,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "jest",
+    "test": "tsc && jest",
     "lint": "eslint . --ignore-pattern dist && prettier --check .",
     "format": "eslint . --ignore-pattern dist --fix && prettier --write .",
     "prepare": "husky install && rollup -c",
