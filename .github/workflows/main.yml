@@ -61,19 +61,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install deps and build component (with cache)
-        run: npm install
-
-      - name: Pack component
-        run: npm pack
-
-      - name: Pass component to example
-        run: cp frameright-react-image-display-control-*.tgz example/frameright-react-image-display-control.tgz
-
-      - name: Install example's dependencies
-        run: npm install
-        working-directory: example/
-
       - name: Build example
-        run: npm run build
+        run: ./clean-build-and-run.sh --build-only
         working-directory: example/
