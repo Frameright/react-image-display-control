@@ -6,6 +6,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+import path from 'path';
 
 const outputOptions = {
   all: {
@@ -59,29 +60,31 @@ const config = {
   input: './src/index.tsx',
   output: [
     {
-      file: './dist/react-image-display-control.esm.js',
+      file: './dist/react-image-display-control.mjs',
       ...outputOptions.all,
       ...outputOptions.esm,
     },
     {
-      file: './dist/react-image-display-control.esm.min.js',
+      file: './dist/react-image-display-control.min.mjs',
       ...outputOptions.all,
       ...outputOptions.esm,
       ...outputOptions.min,
     },
     {
-      file: './dist/react-image-display-control.cjs.js',
+      file: './dist/react-image-display-control.cjs',
       ...outputOptions.all,
       ...outputOptions.cjs,
     },
     {
-      file: './dist/react-image-display-control.cjs.min.js',
+      file: './dist/react-image-display-control.min.cjs',
       ...outputOptions.all,
       ...outputOptions.cjs,
       ...outputOptions.min,
     },
   ],
-  external: ['react', 'react-dom'],
+  external: (id) => {
+    return !id.startsWith('.') && !path.isAbsolute(id);
+  },
 };
 
 export default config;

@@ -26,7 +26,7 @@
     "email": "hello@frameright.io",
     "url": "https://frameright.io/"
   },
-  "main": "dist/react-image-display-control.cjs.min.js",
+  "main": "dist/react-image-display-control.min.cjs",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -52,7 +52,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "module": "dist/react-image-display-control.esm.min.js",
+  "module": "dist/react-image-display-control.min.mjs",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@rollup/plugin-commonjs": "^25.0.4",
