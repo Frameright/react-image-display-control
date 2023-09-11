@@ -111,6 +111,8 @@ The resulting HTML element is responsive and will automatically reassess the
 best region to zoom in on when it gets resized, e.g. when the user turns their
 phone from portrait to landscape.
 
+[![Youtube](https://img.youtube.com/vi/UsBtRSyY-7c/0.jpg)](https://www.youtube.com/watch?v=UsBtRSyY-7c "Youtube")
+
 &emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
