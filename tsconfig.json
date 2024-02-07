@@ -38,6 +38,6 @@
     // error out if import and file system have a casing mismatch. Recommended by TS
     "forceConsistentCasingInFileNames": true,
     // commonly used when type-checking separately with `tsc`
-    "noEmit": true,
-  },
+    "noEmit": true
+  }
 }
