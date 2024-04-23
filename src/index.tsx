@@ -2,11 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import * as React from 'react';
 
-// Note: this import is successful only if "moduleResolution" is set to "Node"
-// in tsconfig.json. However if this is set to "bundler" instead and this can't
-// be resolved, the entire code is still type-valid with `Parser` being of type
-// `any`.
-import type { Parser } from '@frameright/image-display-control-metadata-parser/dist/index.d';
+import { Parser } from '@frameright/image-display-control-metadata-parser';
 
 // If true, we are either running on the server at request-time, or at
 // build time, building a static (e.g. Next.js) page.
@@ -14,8 +10,13 @@ const isServerOrStatic = typeof window === 'undefined';
 
 const isBrowser = !isServerOrStatic;
 
-// See https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
-const isRunningTests = process.env.JEST_WORKER_ID !== undefined;
+let isRunningTests = false;
+try {
+  // See https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
+  isRunningTests = process.env.JEST_WORKER_ID !== undefined;
+} catch (e) {
+  // Probably "ReferenceError: process is not defined", ignore.
+}
 
 // See https://docs.frameright.io/web-component/importing
 if (isBrowser && !isRunningTests) {
@@ -25,67 +26,24 @@ if (isBrowser && !isRunningTests) {
   );
 }
 
-type ParserConstructor = {
-  new (buffer: Buffer): Parser;
-};
-
-// In the browser, importing image-display-control-metadata-parser-standalone
-// will define window.ImageDisplayControl and window.Buffer.
-interface ExtendedWindow extends Window {
-  Buffer: { Buffer: BufferConstructor } | undefined;
-  ImageDisplayControl:
-    | {
-        Parser: ParserConstructor;
-      }
-    | undefined;
-}
-
 interface FsModule {
   readFileSync: (path: string) => Buffer;
 }
 
 let fs: FsModule | null = null;
-let parserConstructor: ParserConstructor | null = null;
-if (isBrowser) {
-  // Defines window.ImageDisplayControl and window.Buffer.
-
-  // Note: this has no .d.ts file, so we have to use `"noImplicitAny": false`
-  // in tsconfig.json for this import to work. Ideally we should get rid of
-  // this special standalone file, as it ships Node polyfills for the browser.
-  // Instead, the library should not require Node polyfills. See
-  // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
-  import(
-    '@frameright/image-display-control-metadata-parser/dist/image-display-control-metadata-parser-standalone.min.js'
-  ).then(() => {
-    const extendedWindow = window as unknown as ExtendedWindow;
-    if (extendedWindow.ImageDisplayControl) {
-      parserConstructor = extendedWindow.ImageDisplayControl.Parser;
-    }
-  });
-} else {
-  // We need to use `require()` here with vite-plugin-ssr in prod as otherwise
+if (!isBrowser) {
+  // We need to use `require()` here with Vite/Vike in prod as otherwise
   // `import()` will happen later than the server-side rendering. However
   // `require()` isn't defined in dev mode, so then we fall back to `import()`.
   if (require) {
     // FIXME: for this to work on Next.js, we need to set
     // `config.resolve.fallback = { fs: false };` in next.config.js. See
-    // * https://github.com/Frameright/image-display-control-metadata-parser/issues/3
-    // * https://stackoverflow.com/questions/64926174/module-not-found-cant-resolve-fs-in-next-js-application
+    // https://stackoverflow.com/questions/64926174/module-not-found-cant-resolve-fs-in-next-js-application
     fs = require('fs');
-
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const parserModule = require('@frameright/image-display-control-metadata-parser');
-
-    parserConstructor = parserModule.Parser;
   } else {
     import('fs').then((fsModule) => {
       fs = fsModule;
     });
-    import('@frameright/image-display-control-metadata-parser').then(
-      (parserModule) => {
-        parserConstructor = parserModule.Parser;
-      }
-    );
   }
 }
 
@@ -145,7 +103,16 @@ export function ImageDisplayControl({
 
     ++numImgChildren;
 
-    const newAttrs = {
+    const newAttrs: {
+      is: string;
+      class: string;
+      ref: React.MutableRefObject<null>;
+      'data-idc-uuid': string;
+      suppressHydrationWarning: boolean;
+      'data-src-prop': string;
+      'data-path-on-server'?: string;
+      'data-image-regions'?: string;
+    } = {
       // Note: thanks to this, react will recognize this as a custom element.
       // https://react.dev/reference/react-dom/components#custom-html-elements
       is: 'image-display-control',
@@ -337,7 +304,7 @@ async function _populateImageRegionsMap(
         }
 
         await _waitForImports(debug);
-        const regions = _readImageRegionsJsonFromArrayBuffer(arrayBuffer);
+        const regions = _readImageRegionsJsonFromBuffer(arrayBuffer);
         if (regions) {
           _traceIfDebug(
             debug,
@@ -431,42 +398,8 @@ function _readImageRegionsJsonFromDisk(
   return result;
 }
 
-// To be used only on client-side.
-function _readImageRegionsJsonFromArrayBuffer(
-  arrayBuffer: ArrayBuffer
-): string {
-  let result = '';
-  try {
-    const extendedWindow = window as unknown as ExtendedWindow;
-    if (!extendedWindow.Buffer) {
-      // See
-      // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
-      _warn(
-        "Buffer module not available, can't read image regions from",
-        'ArrayBuffer.'
-      );
-    } else {
-      const buffer = extendedWindow.Buffer.Buffer.from(arrayBuffer);
-      result = _readImageRegionsJsonFromBuffer(buffer);
-    }
-  } catch (error) {
-    _warn('Error while reading image regions from array buffer:', error);
-  }
-  return result;
-}
-
-function _readImageRegionsJsonFromBuffer(buffer: Buffer): string {
-  if (!parserConstructor) {
-    // See
-    // https://github.com/Frameright/image-display-control-metadata-parser/issues/3
-    _warn(
-      "parserConstructor module not available, can't read image regions from",
-      'Buffer.'
-    );
-    return '';
-  }
-
-  const parser = new parserConstructor(buffer);
+function _readImageRegionsJsonFromBuffer(buffer: Buffer | ArrayBuffer): string {
+  const parser = new Parser(buffer);
   const regions = parser.getIdcMetadata('rectangle', 'crop');
   return JSON.stringify(regions);
 }
@@ -509,8 +442,8 @@ function _getImageSource(
 
     result = {
       src:
-        element.attributes['data-src-prop']?.value ||
-        element.attributes['src']?.value ||
+        element.attributes.getNamedItem('data-src-prop')?.value ||
+        element.attributes.getNamedItem('src')?.value ||
         element.src,
     };
   }
@@ -528,21 +461,15 @@ function _isImgElement(
     return !!element.props.src;
   } else if ('attributes' in element) {
     // HTML element
-    return !!element.attributes['src'].value;
+    return !!element.attributes.getNamedItem('src')?.value;
   }
   return false;
 }
 
-// Workaround for
-// https://github.com/Frameright/image-display-control-metadata-parser/issues/3
+// FIXME: workaround for async import() on Vite/Vike in dev mode.
 async function _waitForImports(debug: boolean) {
-  const extendedWindow = window as unknown as ExtendedWindow;
   for (const waitMs of [100, 200, 500, 1000, 1000]) {
-    if (
-      (fs || isBrowser) &&
-      (extendedWindow.Buffer || isServerOrStatic) &&
-      parserConstructor
-    ) {
+    if (fs || isBrowser) {
       _traceIfDebug(debug, 'All imports have resolved.');
       return;
     }
@@ -554,11 +481,11 @@ async function _waitForImports(debug: boolean) {
 
 const consolePrefix = '[idc]';
 
-function _warn(...args) {
+function _warn(...args: any[]) {
   console.warn(consolePrefix, '[warn]', ...args);
 }
 
-function _traceIfDebug(debug: boolean, ...args) {
+function _traceIfDebug(debug: boolean, ...args: any[]) {
   if (debug) {
     console.log(consolePrefix, '[debug]', ...args);
   }

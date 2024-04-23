@@ -21,8 +21,8 @@ const App = () => {
             >
               <ImageDisplayControl data-debug>
                 <img
-                  src="https://react.frameright.io/assets/pics/skater.jpg"
-                  alt="Skater"
+                  src="https://webc.frameright.io/assets/pics/skater1_highres.jpg"
+                  alt="Skater 1"
                   style={{
                     width: '50%',
                     height: '100%',
@@ -30,8 +30,8 @@ const App = () => {
                   }}
                 />
                 <img
-                  src="https://webc.frameright.io/assets/pics/birds.jpg"
-                  alt="Birds"
+                  src="https://webc.frameright.io/assets/pics/skater2.jpg"
+                  alt="Skater 2"
                   style={{
                     width: '50%',
                     height: '100%',

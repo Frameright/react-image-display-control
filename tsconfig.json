@@ -18,11 +18,7 @@
     "strict": true,
     // linter checks for common issues
     "noImplicitReturns": true,
-
-    // Needed for importing image-display-control-metadata-parser-standalone in
-    // src/index.tsx
-    "noImplicitAny": false,
-
+    "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
     "noUnusedLocals": true,

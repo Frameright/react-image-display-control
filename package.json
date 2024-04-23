@@ -18,7 +18,7 @@
     "react-component",
     "reactjs"
   ],
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "repository": "https://github.com/Frameright/react-image-display-control",
   "author": {
@@ -80,7 +80,7 @@
     "typescript": "^5.2.0"
   },
   "dependencies": {
-    "@frameright/image-display-control-metadata-parser": "^1.1.0",
+    "@frameright/image-display-control-metadata-parser": "^2.0.0",
     "@frameright/image-display-control-web-component": "^1.1.7",
     "uuid": "^9.0.0"
   }

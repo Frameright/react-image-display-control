@@ -48,7 +48,7 @@ jobs:
       - name: Upload component
         uses: actions/upload-artifact@v3
         with:
-          name: image-display-control-metadata-parser
+          name: react-image-display-control
           path: frameright-react-image-display-control-*.tgz
           if-no-files-found: error
 

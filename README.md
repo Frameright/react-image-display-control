@@ -23,6 +23,8 @@ An easy way to do [Image Display Control](https://frameright.io) in your React
 web app. Made with :heart: by [Frameright](https://frameright.io). Power
 to the pictures!
 
+> **Less than 5kB in your final client-side bundle.**
+
 &emsp; :sparkles: [Live demo](https://react.frameright.io)
 
 &emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
@@ -143,6 +145,8 @@ In your Node.js-based project (e.g. using [Next.js](https://nextjs.org/) or
 ```bash
 npm install @frameright/react-image-display-control
 ```
+
+> **Less than 5kB in your final client-side bundle.**
 
 &emsp; :floppy_disk:
 [Importing in your project](https://docs.frameright.io/react/importing)
