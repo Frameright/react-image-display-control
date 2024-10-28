@@ -82,6 +82,6 @@
     "@frameright/image-display-control-metadata-parser": "^2.0.0",
     "@frameright/image-display-control-web-component": "^1.1.7",
     "tslib": "^2.5.2",
-    "uuid": "^10.0.0"
+    "uuid": "^11.0.2"
   }
 }
