@@ -103,6 +103,12 @@ export function ImageDisplayControl({
 
     ++numImgChildren;
 
+    const childProps = {
+      class: null,
+      className: null,
+      ...(child.props as object),
+    };
+
     const newAttrs: {
       is: string;
       class: string;
@@ -120,7 +126,7 @@ export function ImageDisplayControl({
       // Because this is a custom element, `class=` should be used instead of
       // `className=`. However we want to allow the user to use `className=`, so
       // we copy it over to `class=`:
-      class: `${child.props.class || ''} ${child.props.className || ''}`.trim(),
+      class: `${childProps.class || ''} ${childProps.className || ''}`.trim(),
 
       ref,
       'data-idc-uuid': uuid,
@@ -415,27 +421,33 @@ function _getImageSource(
   if ('props' in element) {
     // React element
 
-    if (typeof element.props.src === 'string') {
+    const elementProps = {
+      src: {},
+      'data-path-on-server': null,
+      ...(element.props as object),
+    };
+
+    if (typeof elementProps.src === 'string') {
       result = {
-        src: element.props.src,
+        src: elementProps.src,
       };
-    } else if ('src' in element.props.src) {
+    } else if ('src' in elementProps.src) {
       // This typically happen when statically importing an image on Next.js,
       // the resulting object being an instance of StaticImageData.
       result = {
-        src: element.props.src.src,
+        src: elementProps.src.src as string,
       };
 
-      if ('pathOnServer' in element.props.src) {
-        result.pathOnServer = element.props.src.pathOnServer;
+      if ('pathOnServer' in elementProps.src) {
+        result.pathOnServer = elementProps.src.pathOnServer as string;
       }
     } else {
-      _warn('Unknown src= attribute format: ', element.props.src);
+      _warn('Unknown src= attribute format: ', elementProps.src);
       return null;
     }
 
-    if (element.props['data-path-on-server']) {
-      result.pathOnServer = element.props['data-path-on-server'];
+    if (elementProps['data-path-on-server']) {
+      result.pathOnServer = elementProps['data-path-on-server'];
     }
   } else {
     // HTML element
@@ -458,7 +470,13 @@ function _isImgElement(
 ): boolean {
   if ('props' in element) {
     // React element
-    return !!element.props.src;
+
+    const elementProps = {
+      src: null,
+      ...(element.props as object),
+    };
+
+    return !!elementProps.src;
   } else if ('attributes' in element) {
     // HTML element
     return !!element.attributes.getNamedItem('src')?.value;
