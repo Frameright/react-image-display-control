@@ -46,7 +46,7 @@ jobs:
         run: npm pack
 
       - name: Upload component
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: react-image-display-control
           path: frameright-react-image-display-control-*.tgz
