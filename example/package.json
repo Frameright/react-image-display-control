@@ -17,7 +17,7 @@
     "buffer": "^6.0.3",
     "parcel": "^2.9.1",
     "process": "^0.11.10",
-    "typescript": "^5.0.4"
+    "typescript": "^6.0.2"
   },
   "_comment": "Workaround for https://github.com/swc-project/swc/issues/8988 - @swc/core 1.5.11 is broken",
   "overrides": {
